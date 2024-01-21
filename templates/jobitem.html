@@ -1,0 +1,12 @@
+<div class="job-card">
+    <div class="d-flex justify-content-between">
+        <div>
+            <h3 class="job-title">{{ job.title }}</h3>
+            <p>Location: {{ job.location or 'Not specified' }}</p>
+            <p>Salary: {{ job.salary or 'Not specified' }}</p>
+        </div>
+        <div>
+            <a href="{{ job.apply_link }}" class="apply-btn btn" role="button">Apply</a>
+        </div>
+    </div>
+</div>

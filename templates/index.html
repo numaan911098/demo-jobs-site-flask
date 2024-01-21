@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Open Positions</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f4f4f4;
+            color: #333;
+            font-family: 'Arial', sans-serif;
+        }
+        .container {
+            padding-top: 50px;
+        }
+        .job-card {
+            background-color: white;
+            margin-bottom: 15px;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,.1);
+        }
+        .job-title {
+            font-size: 1.25rem;
+            color: #333;
+        }
+        .apply-btn {
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            padding: .375rem .75rem;
+            color: #fff;
+            background-color: #17a2b8;
+            border-color: #17a2b8;
+            border-radius: .25rem;
+            text-decoration: none;
+        }
+        .apply-btn:hover {
+            background-color: #138496;
+            border-color: #117a8b;
+        }
+        .contact-btn {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+        .contact-btn:hover {
+            background-color: #0069d9;
+            border-color: #005cbf;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 class="mb-4">Open Positions</h2>
+        {% for job in jobs %}
+        {% include 'jobitem.html' %}
+        {% endfor %}
+        <div class="text-center mt-5">
+            <a href="/contact" class="contact-btn btn" role="button">Contact Us</a>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>
