@@ -5,14 +5,24 @@ app = Flask(__name__)
 Jobs = [
     {
         'title': 'Software Engineer',
-        'company': 'Google',
+        'location': 'remote',
         'salary': '1000'   
     },
 
     {
         'title': 'Data Scientist',
-        'company': 'Facebook',
+        'location': 'remote',
         'salary': '200'
+    },
+    {
+        'title': 'Data Engineer',
+        'location': 'remote',
+        'salary': '300'
+    },
+    {
+        'title': 'DevOps Engineer',
+        'location': 'remote',
+        'salary': '400'
     }
 ]
 
@@ -22,8 +32,12 @@ def index():
     return render_template('index.html', jobs=Jobs)
 
 @app.route('/api/jobs')
-def about():
+def jobs():
     return jsonify(Jobs)
+
+@app.route('/about')
+def about():
+    return render_template('about.html')
 
 
 if __name__ == '__main__':

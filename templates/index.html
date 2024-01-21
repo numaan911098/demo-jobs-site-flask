@@ -3,64 +3,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Open Positions</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <title>Careers at NUMAAN</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
-            background-color: #f4f4f4;
-            color: #333;
-            font-family: 'Arial', sans-serif;
+            font-family: 'Roboto', sans-serif;
+            background-color: #f8f9fa;
+            margin-top: 56px;
         }
-        .container {
-            padding-top: 50px;
+        .navbar-custom {
+            background-color: #ffffff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .navbar-custom .navbar-brand {
+            font-weight: bold;
+            color: #0056b3;
+        }
+        .navbar-custom .navbar-nav .nav-link {
+            color: #0056b3;
+        }
+        .hero-section {
+            background: url('https://source.unsplash.com/1920x1080/?office') no-repeat center center;
+            background-size: cover;
+            color: #fff;
+            padding: 100px 0;
+        }
+        .overlay {
+            background-color: rgba(0, 0, 0, 0.4);
+            padding: 100px 0;
         }
         .job-card {
-            background-color: white;
-            margin-bottom: 15px;
+            background-color: #ffffff;
+            margin-bottom: 30px;
             padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 2px 4px rgba(0,0,0,.1);
-        }
-        .job-title {
-            font-size: 1.25rem;
-            color: #333;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,.05);
         }
         .apply-btn {
-            font-size: 0.875rem;
-            text-transform: uppercase;
+            background-color: #28a745;
+            border-color: #28a745;
+            color: white;
+            border-radius: 20px;
             padding: .375rem .75rem;
-            color: #fff;
-            background-color: #17a2b8;
-            border-color: #17a2b8;
-            border-radius: .25rem;
-            text-decoration: none;
+            transition: background-color 0.2s;
         }
         .apply-btn:hover {
-            background-color: #138496;
-            border-color: #117a8b;
+            background-color: #218838;
         }
-        .contact-btn {
-            background-color: #007bff;
-            border-color: #007bff;
+        .footer {
+            background-color: #343a40;
+            color: #adb5bd;
+            padding: 20px 0;
         }
-        .contact-btn:hover {
-            background-color: #0069d9;
-            border-color: #005cbf;
+        .footer a {
+            color: #adb5bd;
+            transition: color 0.2s;
+        }
+        .footer a:hover {
+            color: #fff;
+        }
+        .footer .company-name {
+            font-weight: bold;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+        .footer .links,
+        .footer .contact {
+            list-style: none;
+            padding: 0;
+        }
+        .footer .links li,
+        .footer .contact li {
+            margin-bottom: 10px;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h2 class="mb-4">Open Positions</h2>
-        {% for job in jobs %}
-        {% include 'jobitem.html' %}
-        {% endfor %}
-        <div class="text-center mt-5">
-            <a href="/contact" class="contact-btn btn" role="button">Contact Us</a>
+    {% include 'nav.html' %}
+    
+    <div class="hero-section">
+        <div class="overlay">
+            <div class="container text-center">
+                <h1>Welcome to Our Career Portal</h1>
+                <p>Find your dream job with us and be part of something great.</p>
+            </div>
         </div>
     </div>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    
+    <div class="container mt-5">
+        <h2 class="mb-4 text-center">Open Positions</h2>
+        {% for job in jobs %}
+            {% include 'jobitem.html' %}
+        {% endfor %}
+    </div>
+    
+    {% include 'footer.html' %}
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
