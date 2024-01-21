@@ -6,7 +6,7 @@ Jobs = [
     {
         'title': 'Software Engineer',
         'company': 'Google',
-        'salary': '100'   
+        'salary': '1000'   
     },
 
     {
